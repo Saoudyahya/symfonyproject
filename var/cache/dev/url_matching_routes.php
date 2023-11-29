@@ -8,7 +8,7 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
-        '/member' => [[['_route' => 'app_member_controler', '_controller' => 'App\\Controller\\MemberController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/member' => [[['_route' => 'app_member_controller', '_controller' => 'App\\Controller\\MemberController::index'], null, ['GET' => 0], null, false, false, null]],
         '/reclamation' => [[['_route' => 'app_reclamation', '_controller' => 'App\\Controller\\ReclamationController::index'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
