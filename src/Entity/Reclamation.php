@@ -13,8 +13,11 @@ class Reclamation
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $reclamation = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $member = null;
 
     public function getId(): ?int
     {
@@ -33,9 +36,21 @@ class Reclamation
         return $this->reclamation;
     }
 
-    public function setReclamation(?string $reclamation): static
+    public function setReclamation(string $reclamation): static
     {
         $this->reclamation = $reclamation;
+
+        return $this;
+    }
+
+    public function getMember(): ?string
+    {
+        return $this->member;
+    }
+
+    public function setMember(string $member): static
+    {
+        $this->member = $member;
 
         return $this;
     }

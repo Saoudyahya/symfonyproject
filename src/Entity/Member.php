@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\SportRepository;
+use App\Repository\MemberRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: SportRepository::class)]
+#[ORM\Entity(repositoryClass: MemberRepository::class)]
 class Member
 {
     #[ORM\Id]
@@ -13,18 +13,28 @@ class Member
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $pernom = null;
+    #[ORM\Column(length: 255)]
+    private ?string $prenom = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $age = null;
+    #[ORM\Column(length: 255)]
+    private ?string $username = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $password = null;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setId(string $id): static
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getName(): ?string
@@ -39,26 +49,38 @@ class Member
         return $this;
     }
 
-    public function getPernom(): ?string
+    public function getPrenom(): ?string
     {
-        return $this->pernom;
+        return $this->prenom;
     }
 
-    public function setPernom(string $pernom): static
+    public function setPrenom(string $prenom): static
     {
-        $this->pernom = $pernom;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
-    public function getAge(): ?string
+    public function getUsername(): ?string
     {
-        return $this->age;
+        return $this->username;
     }
 
-    public function setAge(string $age): static
+    public function setUsername(string $username): static
     {
-        $this->age = $age;
+        $this->username = $username;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): static
+    {
+        $this->password = $password;
 
         return $this;
     }

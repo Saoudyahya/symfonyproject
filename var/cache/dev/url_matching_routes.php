@@ -8,8 +8,8 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
-        '/member' => [[['_route' => 'app_sport_member', '_controller' => 'App\\Controller\\SportMemberController::getMember'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/sport/reclamation' => [[['_route' => 'app_sport_reclamation', '_controller' => 'App\\Controller\\SportReclamationController::index'], null, null, null, false, false, null]],
+        '/member' => [[['_route' => 'app_member_controler', '_controller' => 'App\\Controller\\MemberController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/reclamation' => [[['_route' => 'app_reclamation', '_controller' => 'App\\Controller\\ReclamationController::index'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
